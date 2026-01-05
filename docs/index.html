@@ -30,7 +30,6 @@
                         <a target="_blank" class="flex aspect-square bg-white border border-blue-800 border-solid cursor-pointer hover:bg-slate-400 items-center justify-center px-3 text-center w-[130px]" href="http://31.129.111.75:5173/">Главная</a>
                         <a target="_blank" class="flex aspect-square bg-white border border-blue-800 border-solid cursor-pointer hover:bg-slate-400 items-center justify-center px-3 text-center w-[130px]" href="http://31.129.111.75:5173/catalog">Каталог</a>
                         <a target="_blank" class="flex aspect-square bg-white border border-blue-800 border-solid cursor-pointer hover:bg-slate-400 items-center justify-center px-3 text-center w-[130px]" href="http://31.129.111.75:5173/cart">Корзина</a>
-                        <a target="_blank" class="flex aspect-square bg-white border border-blue-800 border-solid cursor-pointer hover:bg-slate-400 items-center justify-center px-3 text-center w-[130px]" href="http://31.129.111.75:5173/cart-empty">Корзина пусто</a>
                         <a target="_blank" class="flex aspect-square bg-white border border-blue-800 border-solid cursor-pointer hover:bg-slate-400 items-center justify-center px-3 text-center w-[130px]" href="http://31.129.111.75:5173/checkout/start">Оформление заказа 1
                         </a>
                         <a target="_blank" class="flex aspect-square bg-white border border-blue-800 border-solid cursor-pointer hover:bg-slate-400 items-center justify-center px-3 text-center w-[130px]" href="http://31.129.111.75:5173/checkout/finish">Оформление заказа 2</a>
@@ -50,92 +49,31 @@
                 <div class="py-10 nav">
                     <h2 class="mb-3 text-xl">Публичные страницы</h2>
                     <div class="flex gap-5">
-                        <a target="_blank" class="flex aspect-square bg-white border border-blue-800 border-solid cursor-pointer hover:bg-slate-400 items-center justify-center px-3 text-center w-[130px]" href="http://31.129.111.75:5173/purchases/1">История покупок</a>
+                        <a target="_blank" class="flex aspect-square bg-white border border-blue-800 border-solid cursor-pointer hover:bg-slate-400 items-center justify-center px-3 text-center w-[130px]" href="http://31.129.111.75:5173/user/1/purchases">История покупок</a>
 
-                        <a target="_blank" class="flex aspect-square bg-white border border-blue-800 border-solid cursor-pointer hover:bg-slate-400 items-center justify-center px-3 text-center w-[130px]" href="http://31.129.111.75:5173/u/1">Для покупателей</a>
+                        <a target="_blank" class="flex aspect-square bg-white border border-blue-800 border-solid cursor-pointer hover:bg-slate-400 items-center justify-center px-3 text-center w-[130px]" href="http://31.129.111.75:5173/user/1">Для покупателей</a>
                     </div>
                 </div>
 
                 <div class="py-10 nav">
                     <h2 class="mb-3 text-xl">Личный кабинет</h2>
                     <div class="flex gap-5">
-                        <a target="_blank" class="flex aspect-square bg-white border border-blue-800 border-solid cursor-pointer hover:bg-slate-400 items-center justify-center px-3 text-center w-[130px]" href="http://31.129.111.75:5173/profile/profile">Кабинет</a>
+                        <a target="_blank" class="flex aspect-square bg-white border border-blue-800 border-solid cursor-pointer hover:bg-slate-400 items-center justify-center px-3 text-center w-[130px]" href="http://31.129.111.75:5173/profile">Кабинет</a>
                     </div>
                 </div>
 
-                <p class="text-red-500"> Сделанные вкладки : Профиль, Избранное </p>
-
-
-                <div class="py-10 block">
-                    <h2 class="mb-3 text-xl">Роуты</h2>
-                    <pre class="bg-orange-200 overflow-x-auto p-5">
-&lt;Routes&gt;
-
-  {/* ===== Основной layout ===== */}
-  &lt;Route element=&lt;MainLayout /&gt;&gt;
-    &lt;Route path="/" element=&lt;Home /&gt; /&gt;
-    &lt;Route path="/catalog" element=&lt;Catalog /&gt; /&gt;
-    &lt;Route path="/cart" element=&lt;Cart /&gt; /&gt;
-    &lt;Route path="/cart/empty" element=&lt;CartEmpty /&gt; /&gt;
-    &lt;Route path="/checkout/start" element=&lt;CheckoutStart /&gt; /&gt;
-    &lt;Route path="/checkout/finish" element=&lt;CheckoutFinish /&gt; /&gt;
-    &lt;Route path="/search" element=&lt;Search /&gt; /&gt;
-    &lt;Route path="/faq" element=&lt;Faq /&gt; /&gt;
-    &lt;Route path="/rating" element=&lt;SellerRating /&gt; /&gt;
-    &lt;Route path="/product/:id" element=&lt;Product /&gt; /&gt;
-    &lt;Route path="/product/add" element=&lt;ProductAdd /&gt; /&gt;
-    &lt;Route path="/looks" element=&lt;Looks /&gt; /&gt;
-  &lt;/Route&gt;
-
-  {/* ===== МОЙ ПРОФИЛЬ (личный кабинет) ===== */}
-  &lt;Route path="/profile" element=&lt;ProfileLayout mode="private" /&gt;&gt;
-    &lt;Route path="profile" element=&lt;ProfileTabProfile /&gt; /&gt; {/* ← Таб 1 */}
-    &lt;Route path="products" element=&lt;ProfileTabProducts /&gt; /&gt;
-    &lt;Route path="purchases" element=&lt;ProfileTabPurchases /&gt; /&gt;
-    &lt;Route path="sales" element=&lt;ProfileTabSales /&gt; /&gt;
-    &lt;Route path="favourites" element=&lt;ProfileTabFavourites /&gt; /&gt;
-    &lt;Route path="chats" element=&lt;ProfileTabChats /&gt; /&gt;
-    &lt;Route path="posts" element=&lt;ProfileTabPosts /&gt; /&gt;
-    {/* Редирект на первый таб */}
-    &lt;Route index element=&lt;Navigate to="profile" replace /&gt; /&gt;
-  &lt;/Route&gt;
-
-  {/* ===== ПУБЛИЧНЫЙ ПРОФИЛЬ ===== */}
-  {/* История покупок — без картинок */}
-  &lt;Route path="/purchases/:id" element=&lt;ProfileLayout mode="public-no-media" /&gt;&gt;
-       {/* Редирект на products по умолчанию */}
-      &lt;Route index element=&lt;Navigate to="products" replace /&gt; /&gt;
-      &lt;Route path="products" element=&lt;PublicPurchaseHistory /&gt; /&gt;
-  &lt;/Route&gt;
-
-  {/* Публичный профиль продавца — с картинками */}
-  &lt;Route path="/u/:id" element=&lt;ProfileLayout mode="public-with-media"/&gt;&gt;
-     {/* Редирект на products по умолчанию */}
-      &lt;Route index element=&lt;Navigate to="products" replace /&gt; /&gt;       
-      &lt;Route path="products" element=&lt;PublicPurchaseHistory /&gt; /&gt;
-      {/* &lt;Route path="contacts" element=&lt;Navigate to="/maintenance" replace /&gt; /&gt; */}
-  &lt;/Route&gt;
-
- &lt;Route element=&lt;NoFooterLayout /&gt;&gt;
-    &lt;Route path="/chats/:id" element=&lt;ProfileChat /&gt; /&gt;
-    {/* ===== 404 и техработы ===== */}
-    &lt;Route path="/maintenance" element=&lt;Maintenance /&gt; /&gt;
-    &lt;Route path="/*" element=&lt;NotFound /&gt; /&gt;
-  &lt;/Route&gt;
-
-&lt;/Routes&gt;
-  </pre>
-                </div>
-
             </div>
+
         </main>
-        <footer class="py-10 bg-slate-500 footer text-white">
-            <div class="container">
-                <p>Weblegko 2025 Dec.</p>
-            </div>
-        </footer>
-
     </div>
+
+    <footer class="py-10 bg-slate-500 footer text-white">
+        <div class="container">
+            <p>Weblegko 2025 Dec.</p>
+        </div>
+    </footer>
+
+
     <script src="./js/main.min.js"></script>
 
 </body>
